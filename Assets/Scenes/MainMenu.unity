@@ -1124,6 +1124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainMenu: {fileID: 80460743}
   _storeMenu: {fileID: 899073487}
+  _storeSkins: {fileID: 1645126052}
+  _storeMusic: {fileID: 1583899418}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
