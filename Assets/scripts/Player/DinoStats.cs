@@ -4,8 +4,8 @@ public class DinoStats : MonoBehaviour
 {
     private int _score;
     private int _money;
-    private int _speed;
-    public static DinoStats Instance;
+    private int _jumpForce=6;
+    public static DinoStats Instance { get; private set; }
     private void Awake()
     {
         if (Instance == null)
@@ -26,9 +26,9 @@ public class DinoStats : MonoBehaviour
         get => _money;
         set => _money = value;
     }
-    public int Speed
+    public int JumpForce
     {
-        get => _speed;
-        set => _speed = value;
+        get => _jumpForce;
+        set => _jumpForce = value;
     }
 }
