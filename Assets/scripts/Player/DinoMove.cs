@@ -1,15 +1,14 @@
-using System;
 using UnityEngine;
 
 public class DinoMove : MonoBehaviour
 {
     private int _jumpf = DinoStats.Instance.JumpForce;
-    [SerializeField]private Rigidbody2D _rb;
-    [SerializeField]private Transform _checkObject;
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private Transform _checkObject;
     [SerializeField] private GameObject _gameOverMenu;
     public LayerMask layerMask;
     
-    [SerializeField]private bool _isGrounded;
+    [SerializeField] private bool _isGrounded;
     private void Awake()
     {
         _isGrounded = true;
