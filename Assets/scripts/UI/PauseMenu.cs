@@ -28,5 +28,6 @@ public class PauseMenu : MonoBehaviour
     public void ExiteGame()
     {
         SceneManager.LoadScene(0);
+        DinoStats.Instance.SaveGame();
     }
 }
