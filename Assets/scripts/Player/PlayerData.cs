@@ -6,25 +6,35 @@ using System.Threading.Tasks;
 
 namespace Assets.scripts.Player
 {
+    [System.Serializable]
     public class PlayerData
     {
-        private int _score;
-        private int _money;
+        public Data playerData;
         public PlayerData() { }
         public PlayerData(int _score,int _money)
         {
-            this._score = _score;
-            this._money = _money;
+            playerData=new Data(_score, _money);
         }
-        public int Score
+        [System.Serializable]
+        public struct Data
         {
-            get => _score;
-            set => _score = value;
+            public int _score, _money;
+            public Data(int _score, int _money)
+            {
+                this._score = _score;
+                this._money = _money;
+            }
+            public int Score
+            {
+                get => _score;
+                set => _score = value;
+            }
+            public int Money
+            {
+                get => _money;
+                set => _money = value;
+            }
         }
-        public int Money
-        {
-            get => _money;
-            set => _money = value;
-        }
+        
     }
 }
