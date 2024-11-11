@@ -840,7 +840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &396252438
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1880,7 +1880,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 646041292}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ExiteGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2716,6 +2716,7 @@ GameObject:
   - component: {fileID: 1351304049}
   - component: {fileID: 1351304048}
   - component: {fileID: 1351304047}
+  - component: {fileID: 1351304051}
   - component: {fileID: 1351304050}
   m_Layer: 0
   m_Name: PlayerDino
@@ -2738,7 +2739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
   _checkObject: {fileID: 1841436951}
-  _gameOverMenu: {fileID: 0}
+  _gameOverMenu: {fileID: 922857804}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -2832,6 +2833,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1351304051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351304046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b824f70ed286946b5e08bc5dbf45e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textScore: {fileID: 922857806}
 --- !u!1 &1415409837
 GameObject:
   m_ObjectHideFlags: 0
