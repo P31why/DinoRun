@@ -4,7 +4,7 @@ public class DinoStats : MonoBehaviour
 {
     private int _score;
     private int _money;
-    private int _jumpForce=6;
+    private int _jumpForce=8;
     public static DinoStats Instance { get; private set; }
     private void Awake()
     {
