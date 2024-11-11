@@ -17,6 +17,7 @@ public class DinoResults : MonoBehaviour
     {
         _currentScore += 1;
         _textScore.text = _currentScore.ToString();
+        DinoStats.Instance.Score = _currentScore;
     }
     IEnumerator AddScore()
     {
