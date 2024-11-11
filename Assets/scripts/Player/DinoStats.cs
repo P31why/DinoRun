@@ -54,4 +54,12 @@ public class DinoStats : MonoBehaviour
             bf.Serialize(fs,pd);
         }
     }
+    public bool CheckSave()
+    {
+        if (!File.Exists(_path))
+        {
+            return false;
+        }
+        return true;
+    }
 }
