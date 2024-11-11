@@ -18,7 +18,17 @@ public class DinoStats : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
-        
+
+        if (!CheckSave())
+        {
+            _money = 0;
+            _score = 0;
+            SaveGame();
+        }
+        else
+        {
+            LoadGame();
+        }
     }
     public int Score
     {
@@ -41,8 +51,8 @@ public class DinoStats : MonoBehaviour
             
             BinaryFormatter bf = new BinaryFormatter();
             PlayerData pd = (PlayerData)bf.Deserialize(fs);
-            _money = pd.Money;
-            _score = pd.Score;
+            _money = pd.playerData.Money;
+            _score = pd.playerData.Score;
         }
     }
     public void SaveGame()
