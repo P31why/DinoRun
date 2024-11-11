@@ -133,9 +133,9 @@ GameObject:
   - component: {fileID: 375559525}
   - component: {fileID: 375559524}
   - component: {fileID: 375559526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -459,8 +459,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f102d86581e45f42a3770155767f051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpf: 5
   _rb: {fileID: 0}
+  _checkObject: {fileID: 1841436951}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _isGrounded: 0
 --- !u!50 &1351304048
 Rigidbody2D:
   serializedVersion: 4
@@ -497,11 +501,12 @@ Transform:
   m_GameObject: {fileID: 1351304046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.026485384, y: -0.8090805, z: 836.5443}
+  m_LocalPosition: {x: -5.59, y: -2.69, z: 836.5443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1154674234}
+  - {fileID: 1841436951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1351304050
@@ -549,6 +554,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1841436950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841436951}
+  m_Layer: 0
+  m_Name: Cheker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841436951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841436950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1351304049}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
