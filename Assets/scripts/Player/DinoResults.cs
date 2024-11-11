@@ -4,19 +4,24 @@ using TMPro;
 
 public class DinoResults : MonoBehaviour
 {
-    [SerializeField]private int _currentScore=0;
+    [SerializeField] private int _currentScore=0;
     [SerializeField] private TMP_Text _textScore;
     private void Start()
     {
         StartCoroutine(AddScore());
+        _textScore.text = "0";
+    }
+    private void ChangeScoreText()
+    {
+        _currentScore += 1;
+        _textScore.text = _currentScore.ToString();
     }
     IEnumerator AddScore()
     {
         while (true)
         {
             yield return new WaitForSeconds(2);
-            _currentScore += 1;
-            _textScore.text = _currentScore.ToString();
+            ChangeScoreText();
         }
     }
 }
