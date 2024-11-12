@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _pauseMenu;
     private void Awake()
     {
+        Time.timeScale = 1;
         _pauseMenu.SetActive(false);
     }
     private void Update()
