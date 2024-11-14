@@ -14,7 +14,7 @@ public class CoinMove : MonoBehaviour
         if (collision.collider.tag == "Player")
         {
             collision.collider.GetComponent<DinoMove>().CoinPlus();
-            StartCoroutine(CoinDelete());
+            Destroy(gameObject);
         }
     }
     IEnumerator CoinDelete()
