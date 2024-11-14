@@ -3621,6 +3621,7 @@ GameObject:
   - component: {fileID: 1351304047}
   - component: {fileID: 1351304051}
   - component: {fileID: 1351304050}
+  - component: {fileID: 1351304052}
   m_Layer: 0
   m_Name: PlayerDino
   m_TagString: Untagged
@@ -3751,6 +3752,27 @@ MonoBehaviour:
   _currentScore: 0
   _textScore: {fileID: 922857806}
   _textobject: {fileID: 922857804}
+--- !u!95 &1351304052
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351304046}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abb495c28f99cae44b98bae9a2bcf3ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1415409837
 GameObject:
   m_ObjectHideFlags: 0
