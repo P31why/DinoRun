@@ -3618,6 +3618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351304049}
   - component: {fileID: 1351304048}
+  - component: {fileID: 1351304054}
   - component: {fileID: 1351304047}
   - component: {fileID: 1351304053}
   - component: {fileID: 1351304051}
@@ -3645,8 +3646,8 @@ MonoBehaviour:
   _rb: {fileID: 0}
   _checkObject: {fileID: 1841436951}
   _gameOverMenu: {fileID: 396252437}
-  _gameOver: {fileID: 0}
-  _coinStats: {fileID: 0}
+  _gameOver: {fileID: 1351304054}
+  _coinStats: {fileID: 1351304053}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -3790,6 +3791,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textMoney: {fileID: 737786136}
   _currentmoney: 0
+--- !u!114 &1351304054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351304046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d21ddebb7d1134fb0325500fe387cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 1848589314}
+  _collectedMoneyText: {fileID: 1753171432}
+  _dinoScore: {fileID: 1351304051}
+  _coinScr: {fileID: 1351304053}
 --- !u!1 &1415409837
 GameObject:
   m_ObjectHideFlags: 0
