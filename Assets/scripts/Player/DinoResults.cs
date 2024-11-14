@@ -22,6 +22,10 @@ public class DinoResults : MonoBehaviour
             DinoStats.Instance.Score = _currentScore;
         }
     }
+    public int CurrentScore
+    {
+        get => _currentScore;
+    }
     IEnumerator AddScore()
     {
         while (true)
