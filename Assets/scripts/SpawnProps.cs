@@ -19,7 +19,10 @@ public class SpawnProps : MonoBehaviour
             {
                 Instantiate(structs[0], transform);
             }
-            
+            else if(obj_number > 4 && obj_number <= 5)
+            {
+                Instantiate(structs[1], transform);
+            }
             /*else if (obj_number >= 4 && obj_number <= 5)
             {
                 Instantiate(structs[1], transform);
