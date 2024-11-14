@@ -46,8 +46,4 @@ public class DinoMove : MonoBehaviour
             Debug.Log("nothing");
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
 }
