@@ -6,14 +6,17 @@ public class DinoMove : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Transform _checkObject;
     [SerializeField] private GameObject _gameOverMenu;
+    [SerializeField] private GameOverScript _gameOver;
+    [SerializeField] private CoinStats _coinStats;
+
     public LayerMask layerMask;
     
     [SerializeField] private bool _isGrounded;
     private void Awake()
     {
+        _gameOverMenu.SetActive(false);
         _isGrounded = true;
         _rb = GetComponent<Rigidbody2D>();
-        _gameOverMenu.SetActive(false);
     }
     private void Update()
     {
@@ -30,20 +33,25 @@ public class DinoMove : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.7f,layerMask);
         Debug.DrawRay(transform.position, Vector3.down * 0.7f, Color.red);
-        if (hit.collider.CompareTag("ground"))
+        if (hit.collider != null)
         {
             _isGrounded = true;
             Debug.Log("ground");
-        }
-        else if (hit.collider.CompareTag("enemy"))
-        {
-            Time.timeScale = 0;
-            _gameOverMenu.SetActive(true);
-            DinoStats.Instance.SaveGame();
         }
         else
         {
             Debug.Log("nothing");
         }
+    }
+    public void Death()
+    {
+        Time.timeScale = 0;
+        _gameOverMenu.SetActive(true);
+        _gameOver.ShowStatistics();
+        DinoStats.Instance.SaveGame();
+    }
+    public void CoinPlus()
+    {
+        _coinStats.AddMoney();
     }
 }
