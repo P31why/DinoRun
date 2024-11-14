@@ -15,7 +15,7 @@ public class SpawnProps : MonoBehaviour
         {
             yield return new WaitForSeconds(2);
             int obj_number=Random.Range(1, 10);
-            if(obj_number>0 && obj_number<=3)
+            if(obj_number>=0 && obj_number<=4)
             {
                 Instantiate(structs[0], transform);
             }
