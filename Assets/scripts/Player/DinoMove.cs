@@ -35,12 +35,19 @@ public class DinoMove : MonoBehaviour
             _isGrounded = true;
             Debug.Log("ground");
         }
+        else if (hit.collider.CompareTag("enemy"))
+        {
+            Time.timeScale = 0;
+            _gameOverMenu.SetActive(true);
+            DinoStats.Instance.SaveGame();
+        }
+        else
+        {
+            Debug.Log("nothing");
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "death")
-        {
-            _gameOverMenu.SetActive(true);
-        }
+        
     }
 }
