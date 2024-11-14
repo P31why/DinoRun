@@ -18,4 +18,11 @@ public class EnemyMove : MonoBehaviour
         yield return new WaitForSeconds(15);
         Destroy(gameObject);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Player")
+        {
+            collision.collider.GetComponent<DinoMove>().Death();
+        }
+    }
 }
