@@ -2653,7 +2653,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 646041292}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3514,10 +3514,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
-  _checkObject: {fileID: 1841436951}
+  _checkObject: {fileID: 0}
   _gameOverMenu: {fileID: 396252437}
   _gameOver: {fileID: 1351304054}
   _coinStats: {fileID: 1351304053}
+  _animator: {fileID: 1351304052}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -3563,7 +3564,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1154674234}
-  - {fileID: 1841436951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1351304050
@@ -4111,37 +4111,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753171430}
   m_CullTransparentMesh: 1
---- !u!1 &1841436950
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1792105307218558948, guid: c4ba6998a951ba84bbec0bdae59aef0d, type: 3}
-  m_PrefabInstance: {fileID: 7752726941979450003}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1841436951}
-  m_Layer: 0
-  m_Name: Cheker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1841436951
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 3350698491113532761, guid: c4ba6998a951ba84bbec0bdae59aef0d, type: 3}
-  m_PrefabInstance: {fileID: 7752726941979450003}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841436950}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.48, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1351304049}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1848589312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,71 +4460,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 0}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ba6998a951ba84bbec0bdae59aef0d, type: 3}
---- !u!1001 &8871510968563274059
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 770503637394525079, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_Name
-      value: PotionMoney
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.600008
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.9131486
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4566,4 +4475,3 @@ SceneRoots:
   - {fileID: 715230055}
   - {fileID: 122549245}
   - {fileID: 1637008698}
-  - {fileID: 8871510968563274059}
