@@ -31,9 +31,9 @@ public class DinoMove : MonoBehaviour
     }
     private void Jumping()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.7f,layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.8f,layerMask);
         Debug.DrawRay(transform.position, Vector3.down * 0.7f, Color.red);
-        if (hit.collider != null)
+        if (hit.collider.tag == "ground")
         {
             _isGrounded = true;
             Debug.Log("ground");
