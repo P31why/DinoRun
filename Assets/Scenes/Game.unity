@@ -1328,7 +1328,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -3677,6 +3677,7 @@ MonoBehaviour:
   _collectedMoneyText: {fileID: 1753171432}
   _dinoScore: {fileID: 1351304051}
   _coinScr: {fileID: 1351304053}
+  _statsText: {fileID: 1736723322}
 --- !u!1 &1415409837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,6 +3920,8 @@ MonoBehaviour:
   - {fileID: 6361096949695556765, guid: c45fa8a411d1b874388efb38d4ed56c7, type: 3}
   - {fileID: 6661139895453448515, guid: 14df751574769364681f810fa68c7d2f, type: 3}
   - {fileID: 2279248090417278595, guid: e388fcd4e14ee7f4b9ea76c16cd235d8, type: 3}
+  - {fileID: 1720691102508609895, guid: aaeb11ced4dc8e14d9fdd6f651c9d0b6, type: 3}
+  - {fileID: 770503637394525079, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
   - {fileID: 6459859974032826019, guid: 9ca0fdfb163600d4a9eb835d9a09fc95, type: 3}
 --- !u!4 &1637008698
 Transform:
@@ -4492,6 +4495,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4ba6998a951ba84bbec0bdae59aef0d, type: 3}
+--- !u!1001 &8871510968563274059
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 770503637394525079, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_Name
+      value: PotionMoney
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.600008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.9131486
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721106386318152716, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 126da9da4a7debc43ab8d7cd745f0ea1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4502,3 +4566,4 @@ SceneRoots:
   - {fileID: 715230055}
   - {fileID: 122549245}
   - {fileID: 1637008698}
+  - {fileID: 8871510968563274059}
