@@ -9,6 +9,8 @@ public class DinoMove : MonoBehaviour
     [SerializeField] private GameOverScript _gameOver;
     [SerializeField] private CoinStats _coinStats;
 
+    [SerializeField] private Animator _animator;
+
     public LayerMask layerMask;
     
     [SerializeField] private bool _isGrounded;
@@ -45,10 +47,14 @@ public class DinoMove : MonoBehaviour
     }
     public void Death()
     {
-        Time.timeScale = 0;
+        _animator.Play("Death");
         _gameOverMenu.SetActive(true);
+        Time.timeScale = 0;
         _gameOver.ShowStatistics();
         DinoStats.Instance.SaveGame();
+        
+        
+        
     }
     public void CoinPlus()
     {
