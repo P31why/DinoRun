@@ -14,20 +14,20 @@ public class SpawnProps : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2);
-            int obj_number=Random.Range(1, 10);
-            if(obj_number>=0 && obj_number<=4)
+            int obj_number=Random.Range(1, 12);
+            if(obj_number>=0 && obj_number<=5)
             {
                 Instantiate(structs[0], transform);
             }
-            else if(obj_number > 4 && obj_number <= 5)
+            else if(obj_number > 5 && obj_number <= 7)
             {
                 Instantiate(structs[1], transform);
             }
-            /*else if (obj_number >= 4 && obj_number <= 5)
+            else if (obj_number > 7 && obj_number <= 9)
             {
-                Instantiate(structs[1], transform);
-            }*/
-            
+                Instantiate(structs[2], transform);
+            }
+            else Instantiate(structs[3], transform);
         }
     }
 }
