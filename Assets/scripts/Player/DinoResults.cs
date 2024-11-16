@@ -25,6 +25,7 @@ public class DinoResults : MonoBehaviour
     public int CurrentScore
     {
         get => _currentScore;
+        set => _currentScore=value;
     }
     IEnumerator AddScore()
     {
