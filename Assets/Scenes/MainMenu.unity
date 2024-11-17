@@ -1647,6 +1647,7 @@ GameObject:
   - component: {fileID: 581806449}
   - component: {fileID: 581806448}
   - component: {fileID: 581806452}
+  - component: {fileID: 581806453}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1758,6 +1759,18 @@ MonoBehaviour:
   _storeSkins: {fileID: 1645126052}
   _storeMusic: {fileID: 1583899418}
   _bestTextScore: {fileID: 1011551848}
+--- !u!114 &581806453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581806447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a85636651bbb8a45953a5cc409ae422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
