@@ -3,6 +3,7 @@ using UnityEngine;
 public class DinoMove : MonoBehaviour
 {
     private int _jumpf = DinoStats.Instance.JumpForce;
+    private int _currentSkin;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Transform _checkObject;
     [SerializeField] private GameObject _gameOverMenu;
@@ -19,6 +20,29 @@ public class DinoMove : MonoBehaviour
         _gameOverMenu.SetActive(false);
         _isGrounded = true;
         _rb = GetComponent<Rigidbody2D>();
+    }
+    private void Start()
+    {
+        if (DinoStats.Instance.SetSkin == -1)
+        {
+            _animator.Play("Run");
+            _currentSkin = 0;
+        }
+        else if (DinoStats.Instance.SetSkin==1)
+        {
+            _animator.Play("RedRun");
+            _currentSkin = 1;
+        }
+        else if(DinoStats.Instance.SetSkin == 2)
+        {
+            _animator.Play("BlueRun");
+            _currentSkin = 2;
+        }        
+        else if(DinoStats.Instance.SetSkin == 3)
+        {
+            _animator.Play("YellowRun");
+            _currentSkin = 3;
+        }
     }
     private void Update()
     {
@@ -47,14 +71,31 @@ public class DinoMove : MonoBehaviour
     }
     public void Death()
     {
-        _animator.Play("Death");
+        if (_currentSkin == 0)
+        {
+            _animator.Play("Death");
+        }
+        else if (_currentSkin == 1)
+        {
+            _animator.Play("RedDeath");
+        }
+        else if (_currentSkin == 2)
+        {
+            _animator.Play("BlueDeath");
+        }
+        else if (_currentSkin == 3)
+        {
+            _animator.Play("YellowDeath");
+        }
+        else
+        {
+            _animator.Play("Death");
+        }
+
         _gameOverMenu.SetActive(true);
         Time.timeScale = 0;
         _gameOver.ShowStatistics();
         DinoStats.Instance.SaveGame();
-        
-        
-        
     }
     public void CoinPlus()
     {
