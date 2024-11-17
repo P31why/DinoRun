@@ -23,7 +23,7 @@ public class DinoMove : MonoBehaviour
     }
     private void Start()
     {
-        if (DinoStats.Instance.SetSkin == -1)
+        if (DinoStats.Instance.SetSkin == 0)
         {
             _animator.Play("Run");
             _currentSkin = 0;

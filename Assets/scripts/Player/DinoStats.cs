@@ -10,7 +10,7 @@ public class DinoStats : MonoBehaviour
     private int _score;
     private int _money;
     public List<DinoSkin> skinsUnlock;
-    private int _setSkin=-1;
+    private int _setSkin;
     private int _jumpForce=8;
     private string _path = "save.txt";
     public static DinoStats Instance { get; private set; }
@@ -27,7 +27,8 @@ public class DinoStats : MonoBehaviour
         {
             _money = 0;
             _score = 0;
-            skinsUnlock = new List<DinoSkin> { 
+            _setSkin = 0;
+           skinsUnlock = new List<DinoSkin> { 
                 new DinoSkin(0,true,"green"),
                 new DinoSkin(1,false,"red"),
                 new DinoSkin(2,false,"blue"),
@@ -72,6 +73,8 @@ public class DinoStats : MonoBehaviour
             PlayerData pd = (PlayerData)bf.Deserialize(fs);
             _money = pd.playerData.Money;
             _score = pd.playerData.Score;
+            _setSkin = pd.playerData.skinSet;
+            skinsUnlock = pd.playerData.unlockSkins;
         }
     }
     public void SaveGame()
