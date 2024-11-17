@@ -65,4 +65,69 @@ public class StoreDino : MonoBehaviour
         Debug.Log(DinoStats.Instance.SetSkin);
 
     }
+
+    public void AplGreenDinoSkin()
+    {
+        if (DinoStats.Instance.skinsUnlock[1].acquired)
+        {
+            DinoStats.Instance.SetSkin = 0;
+            _aplRedText.text = "Выбрано";
+
+        }
+    }
+    public void BuyRedDino()
+    {
+        if (!DinoStats.Instance.skinsUnlock[1].acquired && DinoStats.Instance.Money>=10)
+        {
+            DinoStats.Instance.skinsUnlock[1].acquired = true;
+            DinoStats.Instance.Money -= 10;
+            _buyRedText.text = "Куплено";
+            DinoStats.Instance.SaveGame();
+        }
+    }
+    public void AplRedDinoSkin()
+    {
+        if (DinoStats.Instance.skinsUnlock[1].acquired)
+        {
+            DinoStats.Instance.SetSkin = 1;
+            _aplRedText.text = "Выбрано";
+
+        }
+    }
+    public void BuyBlueDino()
+    {
+        if (!DinoStats.Instance.skinsUnlock[2].acquired && DinoStats.Instance.Money>=40)
+        {
+            DinoStats.Instance.skinsUnlock[2].acquired = true;
+            DinoStats.Instance.Money -= 40;
+            _buyBlueText.text = "Куплено";
+            DinoStats.Instance.SaveGame();
+        }
+    }
+    public void AplBlueDinoSkin()
+    {
+        if (DinoStats.Instance.skinsUnlock[2].acquired)
+        {
+            DinoStats.Instance.SetSkin = 2;
+            _aplRedText.text = "Выбрано";
+        }
+    }
+    public void BuyYellowDino()
+    {
+        if (!DinoStats.Instance.skinsUnlock[3].acquired && DinoStats.Instance.Money>=30)
+        {
+            DinoStats.Instance.skinsUnlock[3].acquired = true;
+            DinoStats.Instance.Money -= 30;
+            _buyBlueText.text = "Куплено";
+            DinoStats.Instance.SaveGame();
+        }
+    }
+    public void AplYellowDinoSkin()
+    {
+        if (DinoStats.Instance.skinsUnlock[3].acquired)
+        {
+            DinoStats.Instance.SetSkin = 3;
+            _aplRedText.text = "Выбрано";
+        }
+    }
 }
