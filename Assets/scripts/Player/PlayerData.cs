@@ -11,18 +11,21 @@ namespace Assets.scripts.Player
     {
         public Data playerData;
         public PlayerData() { }
-        public PlayerData(int _score,int _money)
+        public PlayerData(int _score,int _money, List<DinoSkin> unlSkins,int skinSet)
         {
-            playerData=new Data(_score, _money);
+            playerData=new Data(_score, _money,unlSkins,skinSet);
         }
         [System.Serializable]
         public struct Data
         {
-            public int _score, _money;
-            public Data(int _score, int _money)
+            public int _score, _money,skinSet;
+            public List<DinoSkin> unlockSkins;
+            public Data(int _score, int _money, List<DinoSkin> unlockSkins,int skinSet)
             {
                 this._score = _score;
                 this._money = _money;
+                this.skinSet = skinSet;
+                this.unlockSkins = unlockSkins;
             }
             public int Score
             {
