@@ -1,4 +1,6 @@
 using Assets.scripts.Player;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -7,6 +9,8 @@ public class DinoStats : MonoBehaviour
 {
     private int _score;
     private int _money;
+    public List<DinoSkin> skinsUnlock;
+    private int _setSkin=-1;
     private int _jumpForce=8;
     private string _path = "save.txt";
     public static DinoStats Instance { get; private set; }
@@ -23,6 +27,12 @@ public class DinoStats : MonoBehaviour
         {
             _money = 0;
             _score = 0;
+            skinsUnlock = new List<DinoSkin> { 
+                new DinoSkin(0,true,"green"),
+                new DinoSkin(1,false,"red"),
+                new DinoSkin(2,false,"blue"),
+                new DinoSkin(3,false,"yellow"),
+            };
             SaveGame();
         }
         else
@@ -44,6 +54,15 @@ public class DinoStats : MonoBehaviour
     {
         get => _jumpForce;
     }
+    public int SetSkin
+    {
+        get => _setSkin;
+        set => _setSkin = value;
+    }
+    public void GetUnlockSkins()
+    {
+        
+    }
     private void LoadGame()
     {
         using(FileStream fs=new FileStream(_path,FileMode.Open))
@@ -59,7 +78,7 @@ public class DinoStats : MonoBehaviour
     {
         using (FileStream fs=new FileStream(_path,FileMode.Create))
         {
-            PlayerData pd = new PlayerData(_score,_money);
+            PlayerData pd = new PlayerData(_score,_money,skinsUnlock,_setSkin);
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(fs,pd);
         }
@@ -71,5 +90,19 @@ public class DinoStats : MonoBehaviour
             return false;
         }
         return true;
+    }
+}
+[Serializable]
+public class DinoSkin
+{
+    public int skinId;
+    public bool acquired;
+    public string skinName;
+    public DinoSkin() { }
+    public DinoSkin(int id, bool ac, string name)
+    {
+        skinId = id;
+        acquired = ac;
+        skinName = name;
     }
 }
