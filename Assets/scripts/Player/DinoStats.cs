@@ -10,9 +10,11 @@ public class DinoStats : MonoBehaviour
     private int _score;
     private int _money;
     public List<DinoSkin> skinsUnlock;
+    public List<MusicDisk> musicUnlock;
     private int _setSkin;
     private int _jumpForce=8;
     private string _path = "save.txt";
+    public float volume = 10;
     public static DinoStats Instance { get; private set; }
     private void Awake()
     {
@@ -33,6 +35,14 @@ public class DinoStats : MonoBehaviour
                 new DinoSkin(1,false,"red"),
                 new DinoSkin(2,false,"blue"),
                 new DinoSkin(3,false,"yellow"),
+            };
+            musicUnlock = new List<MusicDisk>
+            {
+                new MusicDisk(0,false,"EveryBody",2),
+                new MusicDisk(1,false,"ColoRU",4),
+                new MusicDisk(2,false,"RiseofCheshyr",4),
+                new MusicDisk(3,false,"Incedent1000a",5),
+                new MusicDisk(4,false,"MC10 OST",20),
             };
             SaveGame();
         }
@@ -107,5 +117,22 @@ public class DinoSkin
         skinId = id;
         acquired = ac;
         skinName = name;
+    }
+}
+
+[Serializable]
+public class MusicDisk
+{
+    public int musicId;
+    public bool acquired;
+    public string musicName;
+    public int price;
+    public MusicDisk() { }
+    public MusicDisk(int musicId, bool acquired, string musicName,int price)
+    {
+        this.musicId = musicId;
+        this.acquired = acquired;
+        this.musicName = musicName;
+        this.price = price;
     }
 }
