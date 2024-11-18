@@ -85,13 +85,14 @@ public class DinoStats : MonoBehaviour
             _score = pd.playerData.Score;
             _setSkin = pd.playerData.skinSet;
             skinsUnlock = pd.playerData.unlockSkins;
+            musicUnlock = pd.playerData.unlockDisks;
         }
     }
     public void SaveGame()
     {
         using (FileStream fs=new FileStream(_path,FileMode.Create))
         {
-            PlayerData pd = new PlayerData(_score,_money,skinsUnlock,_setSkin);
+            PlayerData pd = new PlayerData(_score,_money,skinsUnlock,_setSkin,musicUnlock);
             BinaryFormatter bf = new BinaryFormatter();
             bf.Serialize(fs,pd);
         }
@@ -103,6 +104,17 @@ public class DinoStats : MonoBehaviour
             return false;
         }
         return true;
+    }
+    public int PlayFirstUnlockMusic()
+    {
+        foreach (MusicDisk i in musicUnlock)
+        {
+            if (i.acquired)
+            {
+                return i.musicId;
+            }
+        }
+        return -1;
     }
 }
 [Serializable]
