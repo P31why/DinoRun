@@ -11,6 +11,7 @@ public class GameOverScript : MonoBehaviour
     [SerializeField] private GameObject _statsText;
     public void RestartGame()
     {
+        DinoStats.Instance.SaveGame();
         SceneManager.LoadScene(sceneBuildIndex:1);
     }
     public void ShowStatistics()
