@@ -11,6 +11,7 @@ public class StoreDino : MonoBehaviour
     [SerializeField] private TMP_Text _aplBlueText;
     [SerializeField] private TMP_Text _buyYellowText;
     [SerializeField] private TMP_Text _aplYellowText;
+    [SerializeField] private TMP_Text _moneyCountText;
 
     public void LoadStore()
     {
@@ -63,16 +64,18 @@ public class StoreDino : MonoBehaviour
             _aplYellowText.text = "Выбрано";
         }
         Debug.Log(DinoStats.Instance.SetSkin);
-
+        _moneyCountText.text = DinoStats.Instance.Money.ToString();
     }
 
     public void AplGreenDinoSkin()
     {
-        if (DinoStats.Instance.skinsUnlock[1].acquired)
+        if (DinoStats.Instance.skinsUnlock[0].acquired)
         {
             DinoStats.Instance.SetSkin = 0;
-            _aplRedText.text = "Выбрано";
-
+            _aplGreenText.text = "Выбрано";
+            _aplRedText.text = "Применить";
+            _aplBlueText.text = "Применить";
+            _aplYellowText.text = "Применить";
         }
     }
     public void BuyRedDino()
@@ -82,6 +85,7 @@ public class StoreDino : MonoBehaviour
             DinoStats.Instance.skinsUnlock[1].acquired = true;
             DinoStats.Instance.Money -= 10;
             _buyRedText.text = "Куплено";
+            _moneyCountText.text = DinoStats.Instance.Money.ToString();
             DinoStats.Instance.SaveGame();
         }
     }
@@ -91,6 +95,9 @@ public class StoreDino : MonoBehaviour
         {
             DinoStats.Instance.SetSkin = 1;
             _aplRedText.text = "Выбрано";
+            _aplGreenText.text = "Применить";
+            _aplBlueText.text = "Применить";
+            _aplYellowText.text = "Применить";
 
         }
     }
@@ -100,6 +107,7 @@ public class StoreDino : MonoBehaviour
         {
             DinoStats.Instance.skinsUnlock[2].acquired = true;
             DinoStats.Instance.Money -= 40;
+            _moneyCountText.text = DinoStats.Instance.Money.ToString();
             _buyBlueText.text = "Куплено";
             DinoStats.Instance.SaveGame();
         }
@@ -109,7 +117,10 @@ public class StoreDino : MonoBehaviour
         if (DinoStats.Instance.skinsUnlock[2].acquired)
         {
             DinoStats.Instance.SetSkin = 2;
-            _aplRedText.text = "Выбрано";
+            _aplBlueText.text = "Выбрано";
+            _aplGreenText.text = "Применить";
+            _aplRedText.text = "Применить";
+            _aplYellowText.text = "Применить";
         }
     }
     public void BuyYellowDino()
@@ -118,6 +129,7 @@ public class StoreDino : MonoBehaviour
         {
             DinoStats.Instance.skinsUnlock[3].acquired = true;
             DinoStats.Instance.Money -= 30;
+            _moneyCountText.text = DinoStats.Instance.Money.ToString();
             _buyBlueText.text = "Куплено";
             DinoStats.Instance.SaveGame();
         }
@@ -127,7 +139,10 @@ public class StoreDino : MonoBehaviour
         if (DinoStats.Instance.skinsUnlock[3].acquired)
         {
             DinoStats.Instance.SetSkin = 3;
-            _aplRedText.text = "Выбрано";
+            _aplYellowText.text = "Выбрано";
+            _aplGreenText.text = "Применить";
+            _aplBlueText.text = "Применить";
+            _aplRedText.text = "Применить";
         }
     }
 }
