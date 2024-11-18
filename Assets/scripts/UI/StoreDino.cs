@@ -186,6 +186,7 @@ public class StoreDino : MonoBehaviour
             _buyMusic5.text = "Куплено";
         }
         else _buyMusic5.text = "Купить за 10$";
+        _moneyCountTextMusic.text = DinoStats.Instance.Money.ToString();
     }
 
     public void BuyMusic1()
@@ -193,7 +194,59 @@ public class StoreDino : MonoBehaviour
         MusicDisk buff=DinoStats.Instance.musicUnlock[0];
         if (!buff.acquired && DinoStats.Instance.Money>=buff.price)
         {
-
+            buff.acquired = true;
+            DinoStats.Instance.Money -= buff.price;
+            _moneyCountTextMusic.text = DinoStats.Instance.Money.ToString();
+            _buyMusic1.text = "Куплено";
+            DinoStats.Instance.SaveGame();
+        }
+    }
+    public void BuyMusic2()
+    {
+        MusicDisk buff=DinoStats.Instance.musicUnlock[1];
+        if (!buff.acquired && DinoStats.Instance.Money>=buff.price)
+        {
+            buff.acquired = true;
+            DinoStats.Instance.Money -= buff.price;
+            _moneyCountTextMusic.text = DinoStats.Instance.Money.ToString();
+            _buyMusic2.text = "Куплено";
+            DinoStats.Instance.SaveGame();
+        }
+    }
+    public void BuyMusic3()
+    {
+        MusicDisk buff=DinoStats.Instance.musicUnlock[2];
+        if (!buff.acquired && DinoStats.Instance.Money>=buff.price)
+        {
+            buff.acquired = true;
+            DinoStats.Instance.Money -= buff.price;
+            _moneyCountTextMusic.text = DinoStats.Instance.Money.ToString();
+            _buyMusic3.text = "Куплено";
+            DinoStats.Instance.SaveGame();
+        }
+    }
+    public void BuyMusic4()
+    {
+        MusicDisk buff=DinoStats.Instance.musicUnlock[3];
+        if (!buff.acquired && DinoStats.Instance.Money>=buff.price)
+        {
+            buff.acquired = true;
+            DinoStats.Instance.Money -= buff.price;
+            _moneyCountTextMusic.text = DinoStats.Instance.Money.ToString();
+            _buyMusic4.text = "Куплено";
+            DinoStats.Instance.SaveGame();
+        }
+    }
+    public void BuyMusic5()
+    {
+        MusicDisk buff=DinoStats.Instance.musicUnlock[4];
+        if (!buff.acquired && DinoStats.Instance.Money>=buff.price)
+        {
+            buff.acquired = true;
+            DinoStats.Instance.Money -= buff.price;
+            _moneyCountTextMusic.text = DinoStats.Instance.Money.ToString();
+            _buyMusic5.text = "Куплено";
+            DinoStats.Instance.SaveGame();
         }
     }
 }
